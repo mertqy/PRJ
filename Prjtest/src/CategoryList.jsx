@@ -17,6 +17,7 @@ export default class CategoryList extends Component {
   };
   render() {
     return (
+
       <>
         <h3>{this.props.info.title}</h3>
         <ListGroup>
