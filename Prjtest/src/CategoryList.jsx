@@ -25,7 +25,7 @@ export default class CategoryList extends Component {
             <ListGroupItem
               active={
                 category.categoryName === this.props.currentCategory
-                  ? true
+                  ? border
                   : false
               }
               onClick={() => this.props.chanceCategory(category)}

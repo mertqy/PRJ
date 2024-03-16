@@ -9,7 +9,7 @@ export default class ProductList extends Component {
         <h3>
           {this.props.currentCategory} {this.props.info.title}
         </h3>
-        <Table border>
+        <Table>
           <thead>
             <tr>
               <th>#</th>

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -8,6 +7,8 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import CartSummary from "./CartSummary.jsx";
+import { Link } from "react-router-dom";
 
 export default class Navi extends React.Component {
   constructor(props) {
@@ -29,13 +30,24 @@ export default class Navi extends React.Component {
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Northwind App</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                {this.props.cart.length > 0 ? this.props.cart.length : 0 } adet ürün var
-              </NavItem>
-            </Nav>
-          </Collapse>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink>
+                <Link to="form1">Form Demo1</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link to="form2">Form Demo2</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <CartSummary
+                removeFromCart={this.props.removeFromCart}
+                cart={this.props.cart}
+              />
+            </NavItem>
+          </Nav>
         </Navbar>
       </div>
     );
